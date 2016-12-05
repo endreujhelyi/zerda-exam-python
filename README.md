@@ -27,6 +27,22 @@ The application is accepted if:
 ### Explain the algorithm seen in `third.py`. Use a flowchart, structogram or pseudo code. [2p]
 #### Your answer:
 
+My pseudo code is:
+
+
+COUNT_LETTER_IN_STRING gets two parameters: (STRING & LETTER):
+
+  IF type of STRING not string:
+    RETURN 0 value
+  COUNT variable has 0 value
+
+  FOR every CURRENT_LETTER in STRING:
+    IF CURRENT_LETTER equal to LETTER (input parameter):
+      increase COUNT with 1
+
+  RETURN the value of COUNT to COUNT_LETTER_IN_STRING
+
+
 ### How can you create a graphical user interface and draw a rectangle on it in python? What are the tools needed for it? [2p]
 #### Your answer:
 
