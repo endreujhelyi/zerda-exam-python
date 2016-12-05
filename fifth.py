@@ -19,11 +19,38 @@
 # getStats()
 # it should return its stats as a sting like: "rockets: 3, fuel: 100, launches: 1"
 
+from fourth import Rocket
+
+class SpaceX:
+
+    def __init__(self, stored_fuel):
+        self.stored_fuel = stored_fuel
+        self.fleet = []
+        self.launches = 0
+        self.rocket = Rocket()
+
+    def addRocket(self, rocket_type):
+        self.fleet.append(Rocket(rocket_type))
+
+    def refill_all(self):
+        for _ in self.fleet:
+            self.stored_fuel -= self.rocket.refill()
+
+    def launch_all(self):
+        for _ in self.fleet:
+            self.rocket.launch()
+            self.launches += 1
+
+    def buy_fuel(self, amount):
+        self.stored_fuel += amount
+
+    def getStats(self):
+        return "rockets: {}, fuel: {}, launches: {}".format(len(self.fleet), self.stored_fuel, self.launches)
+
+
 ################################################
 
 # The following code should work with the class:
-
-from fourth import Rocket
 
 # class implementation goes here
 
